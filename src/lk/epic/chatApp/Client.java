@@ -44,7 +44,8 @@ public class Client implements Runnable{
                 dataOutputStream.writeUTF(message);
 
                 reply = dataInputStream.readUTF();
-                System.out.println("Server Says : " + reply);
+                String replyMessage = reply.split(" : ")[1];
+                System.out.println("Server Says : " + replyMessage);
             }
 
         } catch (IOException e) {
